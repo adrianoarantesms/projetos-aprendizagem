@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"   
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:p="http://primefaces.org/ui">
+<f:view contentType="text/html"></f:view>
+
+
+<h:head>
+
+</h:head>
+
+
+<h:body>
+
+<p:dataTable var="c" value="#{contatoMB.list}">
+    
+   <p:column headerText="Id">
+       <h:outputText value="#{c.id}" />
+   </p:column>
+   
+   <p:column headerText="Nome">
+       <h:outputText value="#{c.nome}" />
+       <
+   </p:column>
+   
+   <p:column headerText="Email">
+       <h:outputText value="#{c.email}" />
+   </p:column>
+    
+</p:dataTable>
+
+<p/>
+
+<h:form>
+    <p:growl id="messages" />
+ 
+    <p:splitButton value="salvar" actionListener="#{contatoMB.salvar}" update="messages" icon="ui-icon-disk" ajax="false">
+        <p:menuitem value="Update" actionListener="#{buttonView.update}" update="messages" icon="ui-icon-arrowrefresh-1-w" />
+        <p:menuitem value="Delete" actionListener="#{buttonView.delete}" ajax="false" icon="ui-icon-close" />
+        <p:separator />
+        <p:menuitem value="Homepage" url="http://www.primefaces.org" icon="ui-icon-extlink" />
+    </p:splitButton>
+    
+    <h:outputText value="Nome: " />
+    <p:inputText id="nome" value="#{contatoMB.contato.nome}"/>    
+    <h:outputText value="E-Mail: " />
+    <p:inputText id="email" value="#{contatoMB.contato.email}"/>
+</h:form>
+<p/>
+
+
+
+
+
+</h:body>
+</html>
+
+

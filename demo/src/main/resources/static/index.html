@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script id="angularScript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<meta charset="ISO-8859-1">
+<title>Demo do Lyndon</title>
+</head>
+<body ng-app="app" ng-controller="MainController">
+
+{{OpaMundo}}
+<script>
+
+var app = angular.module('app', []);
+
+app.controller('MainController', function($scope){
+	$scope.OpaMundo = "Ola Mundo! Baita.";
+});
+
+</script>
+</body>
+</html>
